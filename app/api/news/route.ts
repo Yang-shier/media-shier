@@ -35,7 +35,11 @@ export async function GET(request: NextRequest) {
       total: (countQuery as any)?.total || 0,
     });
   } catch (error) {
-    return NextResponse.json({ error: "获取文章失败" }, { status: 500 });
+    console.error("获取文章失败:", error);
+    return NextResponse.json({
+      error: "获取文章失败",
+      details: error instanceof Error ? error.message : String(error)
+    }, { status: 500 });
   }
 }
 
@@ -67,6 +71,10 @@ export async function POST(request: NextRequest) {
       id: result.meta.last_row_id,
     });
   } catch (error) {
-    return NextResponse.json({ error: "发布失败" }, { status: 500 });
+    console.error("发布失败:", error);
+    return NextResponse.json({
+      error: "发布失败",
+      details: error instanceof Error ? error.message : String(error)
+    }, { status: 500 });
   }
 }
