@@ -15,7 +15,7 @@ export default function AdminLoginPage() {
     setLoading(true);
 
     // 简单的演示登录（实际应该调用API验证）
-    if (formData.username === "admin" && formData.password === "admin123") {
+    if (formData.username === "admin" && formData.password === "zhixunwang1031") {
       // 设置登录状态（实际应该使用JWT或session）
       localStorage.setItem("admin_logged_in", "true");
       router.push("/admin/dashboard");
@@ -92,7 +92,7 @@ export default function AdminLoginPage() {
           {/* 演示提示 */}
           <div className="mt-6 p-4 bg-gray-50 rounded-lg">
             <p className="text-xs text-gray-500 text-center">
-              演示账号：admin / admin123
+              演示账号：admin / zhixunwang1031
             </p>
           </div>
         </div>
