@@ -7,18 +7,40 @@ import Link from "next/link";
 export default function NewsListPage() {
   const router = useRouter();
   const [newsList, setNewsList] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("admin_logged_in");
     if (!isLoggedIn) {
       router.push("/admin");
+      return;
     }
+
+    // 获取新闻列表
+    fetch("/api/news?limit=100")
+      .then((res) => res.json())
+      .then((data) => {
+        setNewsList(data.data || []);
+        setLoading(false);
+      })
+      .catch(() => {
+        setLoading(false);
+      });
   }, [router]);
 
-  const handleDelete = (id: number) => {
+  const handleDelete = async (id: number) => {
     if (confirm("确定要删除这篇新闻吗？")) {
-      // TODO: 调用删除API
-      alert("删除功能待实现");
+      try {
+        const res = await fetch(`/api/news/${id}`, { method: "DELETE" });
+        if (res.ok) {
+          setNewsList(newsList.filter((news) => news.id !== id));
+          alert("删除成功");
+        } else {
+          alert("删除失败");
+        }
+      } catch {
+        alert("删除失败");
+      }
     }
   };
 
@@ -64,7 +86,11 @@ export default function NewsListPage() {
           </Link>
         </div>
 
-        {newsList.length === 0 ? (
+        {loading ? (
+          <div className="bg-white rounded-xl shadow-sm p-16 text-center">
+            <p className="text-gray-500">加载中...</p>
+          </div>
+        ) : newsList.length === 0 ? (
           <div className="bg-white rounded-xl shadow-sm p-16 text-center">
             <div className="text-6xl mb-4">📝</div>
             <h2 className="text-xl font-bold text-gray-800 mb-2">还没有发布任何新闻</h2>
@@ -93,8 +119,10 @@ export default function NewsListPage() {
                   <tr key={news.id} className="border-b border-gray-100 hover:bg-gray-50">
                     <td className="px-6 py-4 font-medium text-gray-900">{news.title}</td>
                     <td className="px-6 py-4 text-gray-600">{news.category}</td>
-                    <td className="px-6 py-4 text-gray-600">{news.viewCount}</td>
-                    <td className="px-6 py-4 text-sm text-gray-500">{news.createdAt}</td>
+                    <td className="px-6 py-4 text-gray-600">{news.view_count || 0}</td>
+                    <td className="px-6 py-4 text-sm text-gray-500">
+                      {new Date(news.created_at).toLocaleDateString("zh-CN")}
+                    </td>
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-3">
                         <Link href={`/admin/news/${news.id}/edit`} className="text-indigo-600 hover:text-indigo-700 text-sm font-medium">

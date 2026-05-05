@@ -18,7 +18,27 @@ export default function AdminDashboard() {
     const isLoggedIn = localStorage.getItem("admin_logged_in");
     if (!isLoggedIn) {
       router.push("/admin");
+      return;
     }
+
+    // 获取统计数据
+    fetch("/api/news?limit=100")
+      .then((res) => res.json())
+      .then((data) => {
+        const allNews = data.data || [];
+        const today = new Date().toISOString().split("T")[0];
+        const todayNews = allNews.filter((n: any) =>
+          n.created_at && n.created_at.startsWith(today)
+        );
+        const totalViews = allNews.reduce((sum: number, n: any) => sum + (n.view_count || 0), 0);
+        setStats({
+          totalNews: data.total || allNews.length,
+          totalViews,
+          totalCategories: 4,
+          todayNews: todayNews.length,
+        });
+      })
+      .catch(() => {});
   }, [router]);
 
   const handleLogout = () => {

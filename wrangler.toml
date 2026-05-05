@@ -5,4 +5,4 @@ compatibility_flags = ["nodejs_compat"]
 [[d1_databases]]
 binding = "DB"
 database_name = "news-portal-db"
-database_id = "YOUR_DATABASE_ID_HERE"
+database_id = "b7971f6b-d101-4e16-8fa9-949ba65851b5"

@@ -1,19 +1,16 @@
 export const runtime = "edge";
 
 import { NextRequest, NextResponse } from "next/server";
+import { getRequestContext } from "@cloudflare/next-on-pages";
 
-// GET /api/categories - 获取分类列表
 export async function GET(request: NextRequest) {
   try {
-    // TODO: 从D1数据库查询
-    const categories = [
-      { id: 1, name: "科技", slug: "tech" },
-      { id: 2, name: "财经", slug: "finance" },
-      { id: 3, name: "体育", slug: "sports" },
-      { id: 4, name: "娱乐", slug: "entertainment" },
-    ];
+    const { env } = getRequestContext();
+    const db = env.DB;
 
-    return NextResponse.json({ data: categories });
+    const result = await db.prepare("SELECT * FROM categories ORDER BY sort_order ASC").all();
+
+    return NextResponse.json({ data: result.results });
   } catch (error) {
     return NextResponse.json({ error: "获取分类失败" }, { status: 500 });
   }
