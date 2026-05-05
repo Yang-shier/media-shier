@@ -15,28 +15,17 @@ export default function ContactPage() {
           <div className="mt-12 space-y-8">
             <div>
               <h2 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-2">
-                邮箱
+                微信公众号
               </h2>
-              <p className="text-lg">contact@newsportal.com</p>
-            </div>
-
-            <div>
-              <h2 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-2">
-                商务合作
-              </h2>
-              <p className="text-lg">business@newsportal.com</p>
-            </div>
-
-            <div>
-              <h2 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-2">
-                投稿
-              </h2>
-              <p className="text-lg">submit@newsportal.com</p>
+              <p className="text-lg font-medium">zoedexiaowu</p>
+              <p className="text-sm text-gray-500 mt-2">
+                关注我们的微信公众号，获取最新资讯推送
+              </p>
             </div>
 
             <div className="pt-8 border-t border-gray-200">
               <p className="text-gray-600 leading-relaxed">
-                我们通常会在 24 小时内回复您的邮件。如果您有紧急事项，请在邮件标题中注明"紧急"。
+                欢迎通过微信公众号与我们互动交流。如有商务合作、内容建议或其他问题，请在公众号留言，我们会尽快回复。
               </p>
             </div>
           </div>

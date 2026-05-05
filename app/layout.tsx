@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "新闻门户",
-  description: "最新资讯，尽在掌握",
+  title: "知讯网",
+  description: "专注高质量资讯内容，让阅读回归本质",
 };
 
 export default function RootLayout({

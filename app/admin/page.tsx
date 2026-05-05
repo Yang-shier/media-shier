@@ -34,7 +34,7 @@ export default function AdminLoginPage() {
             <span className="text-3xl font-bold text-indigo-600">N</span>
           </div>
           <h1 className="text-3xl font-bold text-white mb-2">管理后台</h1>
-          <p className="text-white/80">新闻门户管理系统</p>
+          <p className="text-white/80">知讯网管理系统</p>
         </div>
 
         {/* 登录表单 */}

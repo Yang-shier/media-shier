@@ -25,7 +25,7 @@ export default function PrivacyPage() {
 
             <h2 className="text-2xl font-serif font-bold mt-12 mb-4">信息使用</h2>
             <p>
-              我们使用收集的信息来提供和改善服务、发送新闻推送、回复您的询问等。我们不会将您的个人信息出售给第三方。
+              我们使用收集的信息来提供和改善服务、发送资讯推送、回复您的询问等。我们不会将您的个人信息出售给第三方。
             </p>
 
             <h2 className="text-2xl font-serif font-bold mt-12 mb-4">信息保护</h2>

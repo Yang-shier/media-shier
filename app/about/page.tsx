@@ -10,33 +10,33 @@ export default function AboutPage() {
 
       <main className="flex-1">
         <article className="max-w-3xl mx-auto px-6 py-16">
-          <h1 className="text-4xl font-serif font-bold">关于我们</h1>
+          <h1 className="text-4xl font-serif font-bold">关于知讯网</h1>
 
           <div className="mt-12 space-y-6 text-gray-700 leading-relaxed">
             <p>
-              我们是一个专注于提供高质量新闻资讯的平台。在信息爆炸的时代，我们相信优质内容的价值，致力于为读者筛选和呈现真正有价值的信息。
+              知讯网是一个专注于提供高质量资讯内容的平台。在信息碎片化的时代，我们致力于为读者筛选和呈现真正有价值的深度内容，让阅读回归本质。
             </p>
 
             <p>
-              我们的团队由经验丰富的记者、编辑和技术专家组成。我们坚持新闻专业主义，追求客观、准确、深入的报道。
+              我们相信，优质的内容不应被淹没在信息洪流中。知讯网通过精心策划和编辑，为您带来科技、财经、体育、娱乐等多个领域的精选资讯，帮助您高效获取有价值的信息。
             </p>
 
-            <h2 className="text-2xl font-serif font-bold mt-12 mb-6">我们的价值观</h2>
+            <h2 className="text-2xl font-serif font-bold mt-12 mb-6">我们的理念</h2>
 
             <p>
-              <strong>真实</strong> — 我们坚持事实核查，拒绝虚假信息。
-            </p>
-
-            <p>
-              <strong>独立</strong> — 我们保持编辑独立性，不受外部利益影响。
+              <strong>精选内容</strong> — 我们不追求数量，只关注质量。每一篇文章都经过精心筛选。
             </p>
 
             <p>
-              <strong>深度</strong> — 我们追求深度报道，而不仅仅是表面信息。
+              <strong>深度阅读</strong> — 我们提供有深度、有见解的内容，而不是快餐式的信息碎片。
             </p>
 
             <p>
-              <strong>多元</strong> — 我们尊重不同观点，呈现多元视角。
+              <strong>简洁设计</strong> — 我们采用极简的设计风格，让您专注于内容本身，享受纯粹的阅读体验。
+            </p>
+
+            <p>
+              <strong>持续更新</strong> — 我们保持内容的时效性，为您带来最新的资讯动态。
             </p>
 
             <h2 className="text-2xl font-serif font-bold mt-12 mb-6">联系我们</h2>

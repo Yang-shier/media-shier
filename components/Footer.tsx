@@ -6,9 +6,9 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h4 className="font-serif text-lg font-bold mb-4">新闻</h4>
+            <h4 className="font-serif text-lg font-bold mb-4">知讯网</h4>
             <p className="text-sm text-gray-500 leading-relaxed">
-              专注于提供高质量的新闻资讯，<br />
+              专注于提供高质量的资讯内容，<br />
               让阅读回归本质。
             </p>
           </div>
@@ -30,7 +30,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-gray-100 text-center text-xs text-gray-400">
-          © {new Date().getFullYear()} 新闻门户
+          © {new Date().getFullYear()} 知讯网
         </div>
       </div>
     </footer>

@@ -20,7 +20,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="text-2xl font-serif font-bold tracking-tight">
-            新闻
+            知讯网
           </Link>
 
           {/* 导航 */}
