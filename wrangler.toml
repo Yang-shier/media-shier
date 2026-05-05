@@ -1,0 +1,8 @@
+name = "news-portal"
+compatibility_date = "2024-05-01"
+compatibility_flags = ["nodejs_compat"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "news-portal-db"
+database_id = "YOUR_DATABASE_ID_HERE"
