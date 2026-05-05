@@ -88,13 +88,6 @@ export default function AdminLoginPage() {
               ← 返回前台
             </a>
           </div>
-
-          {/* 演示提示 */}
-          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-            <p className="text-xs text-gray-500 text-center">
-              演示账号：admin / zhixunwang1031
-            </p>
-          </div>
         </div>
       </div>
     </div>
